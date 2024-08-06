@@ -5,3 +5,7 @@ bin
 JRE System Library
 Maven Dependencies
 Referenced Libraries
+.vscode
+.settings
+.classpath
+.project
