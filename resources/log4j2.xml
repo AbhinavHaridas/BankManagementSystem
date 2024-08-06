@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="filename">./logs</Property>
+	</Properties>
+	<Appenders>
+		<RollingFile name="file" fileName="${filename}/bmlogger.log"
+			filePattern="${filename}/bmlogger-%d{HH-mm-ss}.log">
+			<PatternLayout>
+				<pattern>%d{HH:mm:ss.SSSS} [%t] %-5level %logger{36} - %msg%n</pattern>
+			</PatternLayout>
+			<SizeBasedTriggeringPolicy size="30 KB" />
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="debug">
+			<AppenderRef ref="file" />
+		</Root>
+	</Loggers>
+</Configuration>

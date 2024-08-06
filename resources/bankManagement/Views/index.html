@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Mangament System</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="which-table-main-secton" id="which-table-main-secton">
+        <select name="which-table" id="which-table" class="which-table" >
+            <option value="transactions">transactions</option>
+            <option value="user-accounts">user accounts</option>
+            <option value="account-type" selected="1">account type</option>
+        </select>
+    </div>
+    <div class="main-section" id="main-section">
+        <div class="table-and-add-new-row">
+            <div class="add-new-row-and-search-box">
+                <div id="add-new-row" class="add-new-row">
+                    <button id="add-new-row-button">Add new row</button>
+                </div>
+                <div class="dropdown-download">
+                    <select name="attachment-types-download" id="attachment-types-download" class="attachment-types-download">
+                        <option value="pdf">pdf</option>
+                        <option value="docx">docx (word)</option>
+                        <option value="csv" selected="1">csv (excel) </option>
+                    </select>
+                    <button class="downloadButton" id="downloadButton">
+                        Download
+                    </button>
+                    <button class="emailButton" id="emailButton">Send mail with that attachement</button>
+                </div>
+                <div class="dropdown-search-box">
+                    <select name="search-fields" id="search-fields" class="search-fields">
+                        <option value="id">id</option>
+                        <option value="deposit/withdrawl">deposit/withdrawl</option>
+                        <option value="amount">amount</option>
+                    </select>
+                    <input class="search-box" id="search-field-value" onchange="async() => await searchDriver()"></input>
+                    <br />
+                    <h5>Start date</h5>
+                    <input type="date" class="date-start" id="date-start"></input>
+                    <br />
+                    <h5>End date</h5>
+                    <input type="date" class="date-end" id="date-end"></input>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>transaction_id</th>
+                        <th>deposit/withdrawl</th>
+                        <th>amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Deposit</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Withdrawal</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="edit-config-details">
+            <div class="config-details" id="config-details">
+                <h5 class="edit-config-details-header">Edit config details (Enter the ID and value of field or fields
+                    you want to edit)</h5>
+                <h5>transaction_id</h5>
+                <input class="search-box"></input>
+                <h5>deposit/withdrawl</th>
+                    <input class="search-box"></input>
+                    <h5>amount</h5>
+                    <input class="search-box"></input>
+                    <br />
+                    <br />
+                    <button>Change field</button>
+            </div>
+        </div>
+        <div class="delete-row" id="delete-row">
+            <!-- rendered dynamically -->
+        </div>
+        <br />
+        <div class="deposit-and-withdraw" id="deposit-and-withdraw">
+            <!-- only required for user account table -->
+        </div>
+        <div class="balance-of-an-account" id="balance-of-an-account">
+            <!-- only required for user account table -->
+        </div>
+        <div class="get-latest-transaction" id="get-latest-transaction">
+        <!-- only required for transactions table -->
+        </div>
+    </div>
+    <div class="add-new-row-div" id="add-new-row-div">
+        <div><h5>Close</h5></div>
+        <h5 class="add-new-row-header">Add new row</h5>
+        <h5>transaction_id</h5>
+        <input class="search-box"></input>
+        <h5>deposit/withdrawl</h5>
+        <input class="search-box"></input>
+        <h5>amount</h5>
+        <input class="search-box"></input>
+        <br />
+        <br />
+        <button id="add-new-row-bt" >Add new row</button>
+    </div>
+    
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
